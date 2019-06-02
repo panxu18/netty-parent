@@ -8,4 +8,18 @@
   <artifactId>netty-serialize-sample</artifactId>
   <packaging>pom</packaging>
   <name>demo for serialize with netty</name>
+  <modules>
+  	<module>netty-serialize-client</module>
+  	<module>netty-serialize-server</module>
+  	<module>netty-serialize-model</module>
+  </modules>
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+        	<groupId>com.xup.demo.netty</groupId>
+        	<artifactId>netty-serialize-model</artifactId>
+        	<version>${project.version}</version>
+        </dependency>
+  	</dependencies>
+  </dependencyManagement>
 </project>
