@@ -1,7 +1,5 @@
 package com.xup.demo.netty.server;
 
-import io.netty.channel.ChannelHandler;
-import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.codec.string.StringDecoder;

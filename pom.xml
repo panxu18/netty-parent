@@ -4,6 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>netty-server</module>
+        <module>netty-client</module>
+        <module>netty-serialize-sample</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
