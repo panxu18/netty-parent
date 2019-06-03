@@ -6,6 +6,7 @@
         <module>netty-server</module>
         <module>netty-client</module>
         <module>netty-serialize-sample</module>
+        <module>netty-protobuf-sample</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
