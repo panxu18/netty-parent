@@ -7,6 +7,7 @@
         <module>netty-client</module>
         <module>netty-serialize-sample</module>
         <module>netty-protobuf-sample</module>
+        <module>netty-message-sample</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -30,7 +31,7 @@
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-all</artifactId>
-                <version>4.1.36.Final</version>
+                <version>5.0.0.Alpha2</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -12,6 +12,7 @@ import com.xup.demo.netty.protobuf.model.SubscribeResponseProto;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.EventLoopGroup;
@@ -77,10 +78,10 @@ public class SubscribeRequestProtobufServer {
 		logger.info("Shutdown Netty Server Success!");
 	}
 
-	private class SubscribeRequestHandler extends SimpleChannelInboundHandler<Object>{
+	private class SubscribeRequestHandler extends ChannelHandlerAdapter{
 
 		@Override
-		protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
+		public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 			SubscribeRequestProto.SubscribeRequest req = (SubscribeRequestProto.SubscribeRequest) msg;
 			if("xupan".equalsIgnoreCase(req.getUserName())){
 				logger.info("Service accept client subscribe req : [" + 

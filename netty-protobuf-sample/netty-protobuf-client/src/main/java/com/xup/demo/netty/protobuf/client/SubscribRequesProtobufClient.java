@@ -10,6 +10,7 @@ import com.xup.demo.netty.protobuf.model.SubscribeResponseProto;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -62,10 +63,10 @@ public class SubscribRequesProtobufClient {
 		}
 	}
 
-	private class SubscribeRequestHandler extends SimpleChannelInboundHandler<Object>{
+	private class SubscribeRequestHandler extends ChannelHandlerAdapter{
 
 		@Override
-		protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
+		public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 			logger.info("Receive server response: [" + msg + "]");
 
 		}
