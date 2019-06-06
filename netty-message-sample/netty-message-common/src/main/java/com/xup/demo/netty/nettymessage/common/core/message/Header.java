@@ -6,7 +6,7 @@ import java.util.Map;
 public final class Header {
 	
 	private int crcCode = 0xabef0101;
-	private int length; //消息长度
+	private int length; //不含crcCode和length的长度
 	private long sessionID;
 	private byte type;
 	private byte priority;

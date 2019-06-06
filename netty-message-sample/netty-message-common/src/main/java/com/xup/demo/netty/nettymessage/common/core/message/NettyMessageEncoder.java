@@ -53,13 +53,8 @@ public class NettyMessageEncoder extends MessageToMessageEncoder<NettyMessage>{
 		} else {
 			sendBuf.writeInt(0);
 		}
-		sendBuf.setInt(4, sendBuf.readableBytes());
+		sendBuf.setInt(4, sendBuf.readableBytes()-8);
 		out.add(sendBuf);
 	}
 	
-	public ByteBuf encodeTest(NettyMessage msg) throws Exception{
-		List<Object> out = new ArrayList<>();
-		encode(null, msg, out);
-		return (ByteBuf)out.get(0);
-	}
 }

@@ -88,10 +88,10 @@ public class SubscribeRequestServer {
         logger.info("Shutdown Netty Server Success!");
 	}
 
-	private class SubscibeRequestHandler extends SimpleChannelInboundHandler<Object>{
+	private class SubscibeRequestHandler extends ChannelHandlerAdapter{
 
 		@Override
-		protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
+		public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 			SubscribeRequest req = (SubscribeRequest) msg;
 			if("xupan".equalsIgnoreCase(req.getUserName())){
 				logger.info("Service accept client subscribe req : [" + 
