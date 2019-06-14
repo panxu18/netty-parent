@@ -1,6 +1,7 @@
 package com.xup.demo.netty.message.server.core;
 
 import java.net.InetSocketAddress;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -12,7 +13,9 @@ import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
 public class LoginAuthResponseHandler extends ChannelHandlerAdapter{
+	
 	private Map<String, Boolean> nodeCheck = new ConcurrentHashMap<>();
+
 
 	private String[] whiteList = {"127.0.0.1", "192.168.2.44"};
 
@@ -37,6 +40,9 @@ public class LoginAuthResponseHandler extends ChannelHandlerAdapter{
 				}
 				loginResp = isOK ? buildResponse((byte) 0) : buildResponse((byte) -1);
 				if (isOK) {
+					String key = ctx.channel().remoteAddress().toString();
+					PushService.sessionManage.put(key, ctx);
+					System.out.println("Session " + key + " saved");
 					nodeCheck.put(nodeIndex, true);
 				}
 			}

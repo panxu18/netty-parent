@@ -1,0 +1,18 @@
+gateway:
+  server:
+    url: 127.0.0.1
+    port: 8160
+    bossGroupNums: 0
+    workerGroupNums: 0
+dubbo:
+ application:
+  name: sendmessage
+ protocol:
+  name: dubbo
+  port: 20881
+ registry:
+  address: zookeeper://127.0.0.1:2181
+ scan:
+  base-packages: com.xup.demo.service
+ metadata-report:
+  address: zookeeper://127.0.0.1:2181

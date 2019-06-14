@@ -9,8 +9,8 @@ public class ClientHandler extends ChannelHandlerAdapter{
 
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-		ctx.channel().attr(AttributeKey.valueOf("Attribute_key")).set(msg);
-		ctx.close();
+		System.out.println(msg);
+		ctx.fireChannelRead(msg);
 	}
 
 }

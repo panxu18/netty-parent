@@ -59,7 +59,7 @@ public class NettyClient {
 	}
 
 	public static void main(String[] args) {
-		InetSocketAddress address = new InetSocketAddress("127.0.0.1", 7000);
+		InetSocketAddress address = new InetSocketAddress("127.0.0.1", 8160);
 		String message = "hello";
 		try {
 			Object result = NettyClient.startAndWrite(address, message);

@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.xup.demo.netty.message.client.core.HeartBeatRequestHandler;
 import com.xup.demo.netty.message.client.core.LoginAuthRequestHandler;
+import com.xup.demo.netty.message.client.core.MessageRecieveHandler;
 import com.xup.demo.netty.nettymessage.common.core.message.NettyMessageDecoder;
 import com.xup.demo.netty.nettymessage.common.core.message.NettyMessageEncoder;
 
@@ -36,7 +37,7 @@ public class NettyMessageClient {
 				protected void initChannel(SocketChannel ch) throws Exception {
 					ch.pipeline().addLast("NettyMessageDecoder", new NettyMessageDecoder(1024*1024, 4, 4));
 					ch.pipeline().addLast("MessageEncode", new NettyMessageEncoder());
-					ch.pipeline().addLast("ReadTimeoutHandler", new ReadTimeoutHandler(50));
+					ch.pipeline().addLast("ReadTimeoutHandler", new ReadTimeoutHandler(45));
 					ch.pipeline().addLast("LoginAuthRequestHandler", new LoginAuthRequestHandler());
 					ch.pipeline().addLast("HeartBeatRequestHandler", new HeartBeatRequestHandler());
 				}

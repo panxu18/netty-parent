@@ -7,6 +7,7 @@
 		<module>netty-protobuf-sample</module>
 		<module>netty-message-sample</module>
 		<module>netty-sample</module>
+		<module>netty-gateway-parent</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
